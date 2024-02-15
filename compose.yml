@@ -1,0 +1,9 @@
+services:
+  db:
+    image: mysql:8.1.0
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: attt
+      MYSQL_ROOT_PASSWORD: root
+      TZ: 'Asia/Tokyo'
