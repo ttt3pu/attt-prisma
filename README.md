@@ -8,6 +8,12 @@
 pnpm prisma generate
 ```
 
+### Create migration
+
+```sh
+npx prisma migrate dev --name migration_file_name
+```
+
 ### Reset Data
 
 ```sh

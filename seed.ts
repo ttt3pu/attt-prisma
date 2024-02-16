@@ -11,15 +11,15 @@ faker.seed(1);
 enFaker.seed(1);
 
 async function main() {
-  const slugs = faker.helpers.uniqueArray(enFaker.lorem.slug, 5);
-
-  for (const slug of slugs) {
+  for (let id = 1; id <= 5; id++) {
     const date = faker.date.anytime();
 
-    await prisma.blogPost.create({
-      data: {
+    await prisma.blogPost.upsert({
+      where: {
+        id,
+      },
+      create: {
         title: faker.lorem.words(),
-        slug,
         content: `
 ## h2
 **太字**
@@ -40,6 +40,7 @@ async function main() {
         updated_at: date,
         published_at: date,
       },
+      update: {},
     });
   }
 }
