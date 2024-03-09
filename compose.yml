@@ -1,9 +1,10 @@
 services:
   db:
-    image: mysql:8.1.0
+    image: postgres:16
     ports:
-      - '3306:3306'
+      - '5432:5432'
     environment:
-      MYSQL_DATABASE: attt
-      MYSQL_ROOT_PASSWORD: root
+      POSTGRES_DB: attt
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
       TZ: 'Asia/Tokyo'
