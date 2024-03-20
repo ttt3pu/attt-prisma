@@ -20,3 +20,19 @@ model BlogPost {
   updated_at DateTime   @default(now())
   published_at DateTime @default(now())
 }
+
+model AchievementPost {
+  id                Int        @id @default(autoincrement())
+  steam_id          Int        @unique
+  title             String
+  is_idle_game      Boolean
+  rating            Int
+  yarikomi_rating   Int
+  difficulty_rating Int
+  content           String     @db.Text
+  completed_at      DateTime
+  total_hours       Int
+  created_at        DateTime   @default(now())
+  updated_at        DateTime   @default(now())
+  sort_order        Int
+}
