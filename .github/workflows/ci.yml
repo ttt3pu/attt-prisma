@@ -33,4 +33,4 @@ jobs:
 
       - name: Prisma migrate
         if: github.ref == 'refs/heads/main'
-        run: pnpm prisma db push --accept-data-loss
+        run: pnpm prisma migrate deploy
