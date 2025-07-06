@@ -9,7 +9,7 @@
     "seed": "tsx seed.ts"
   },
   "devDependencies": {
-    "@faker-js/faker": "9.8.0",
+    "@faker-js/faker": "9.9.0",
     "prisma": "6.10.1",
     "tsx": "4.20.3"
   },
