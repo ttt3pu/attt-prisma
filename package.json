@@ -10,10 +10,10 @@
   },
   "devDependencies": {
     "@faker-js/faker": "9.9.0",
-    "prisma": "6.13.0",
+    "prisma": "6.16.3",
     "tsx": "4.20.6"
   },
   "dependencies": {
-    "@prisma/client": "6.13.0"
+    "@prisma/client": "6.16.3"
   }
 }
