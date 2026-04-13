@@ -12,6 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SHADOW_DATABASE_URL: postgresql://root:root@localhost:5433/attt_shadow
+
+    services:
+      shadow_db:
+        image: postgres:16
+        ports:
+          - 5433:5432
+        env:
+          POSTGRES_DB: attt_shadow
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: root
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - uses: actions/checkout@v6
@@ -31,7 +47,9 @@ jobs:
       - name: Prisma generate types and etc
         run: pnpm prisma generate
 
-      - name: Prisma migrate
+      - name: Check for missing migration files
+        run: pnpm prisma migrate diff --from-migrations ./migrations --to-schema ./schema.prisma --exit-code
+
+      - name: Apply migrations
         if: github.ref == 'refs/heads/main'
-        run: pnpm prisma db push
-        # run: pnpm prisma db push --accept-data-loss
+        run: pnpm prisma migrate deploy
