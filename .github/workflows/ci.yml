@@ -48,7 +48,7 @@ jobs:
         run: pnpm prisma generate
 
       - name: Check for missing migration files
-        run: pnpm prisma migrate diff --from-migrations ./migrations --to-schema ./schema.prisma --shadow-database-url $SHADOW_DATABASE_URL --exit-code
+        run: pnpm prisma migrate diff --from-migrations ./migrations --to-schema ./schema.prisma --exit-code
 
       - name: Apply migrations
         if: github.ref == 'refs/heads/main'
