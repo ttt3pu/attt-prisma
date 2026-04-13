@@ -31,7 +31,9 @@ jobs:
       - name: Prisma generate types and etc
         run: pnpm prisma generate
 
-      - name: Prisma migrate
+      - name: Check for missing migration files
+        run: pnpm prisma migrate diff --from-migrations ./migrations --to-schema-datamodel ./schema.prisma --exit-code
+
+      - name: Apply migrations
         if: github.ref == 'refs/heads/main'
-        run: pnpm prisma db push
-        # run: pnpm prisma db push --accept-data-loss
+        run: pnpm prisma migrate deploy
