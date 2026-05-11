@@ -16,8 +16,5 @@
   "dependencies": {
     "@prisma/client": "7.8.0"
   },
-  "packageManager": "pnpm@11.0.9",
-  "pnpm": {
-    "onlyBuiltDependencies": ["@prisma/engines", "esbuild", "prisma"]
-  }
+  "packageManager": "pnpm@11.0.9"
 }
