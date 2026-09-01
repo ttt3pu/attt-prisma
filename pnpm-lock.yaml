@@ -19,8 +19,8 @@ importers:
         specifier: 7.8.0
         version: 7.8.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       tsx:
-        specifier: 4.23.12
-        version: 4.23.12
+        specifier: 4.23.13
+        version: 4.23.13
 
 packages:
 
@@ -591,8 +591,8 @@ packages:
   std-env@3.10.0:
     resolution: {integrity: sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==}
 
-  tsx@4.23.12:
-    resolution: {integrity: sha512-FDf4L4sYzKtzWYhU/Xm0AQFdTjdIxNo9ElTf2mxXM6k8YMHXzYUe4yODVaXP4V9uMFbVg8c0qyBccK2OOxb45Q==}
+  tsx@4.23.13:
+    resolution: {integrity: sha512-BL5MGkRln6aDYhb0xbQlEAGw743BaZYWdbWtdJOBriYJboKgUUYCadFp2/FpBBZquBC/ezNBn7wMMPx7FDZUDw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -1094,7 +1094,7 @@ snapshots:
 
   std-env@3.10.0: {}
 
-  tsx@4.23.12:
+  tsx@4.23.13:
     dependencies:
       esbuild: 0.28.0
     optionalDependencies:
