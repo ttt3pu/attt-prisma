@@ -1,5 +1,8 @@
 import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import { PrismaPg } from '@prisma/adapter-pg';
+
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+const prisma = new PrismaClient({ adapter });
 import { ja, en, Faker } from '@faker-js/faker';
 import { faker as enFaker } from '@faker-js/faker/locale/en';
 import { achievementPosts } from './seed_constants/achievement-posts';
