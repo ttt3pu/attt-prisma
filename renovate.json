@@ -6,6 +6,16 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["postgres"],
       "enabled": false
+    },
+    {
+      "description": "Automerge prisma minor/patch when tests pass",
+      "matchPackageNames": [
+        "prisma",
+        "@prisma/client",
+        "@prisma/adapter-pg"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
     }
   ]
 }
