@@ -11,7 +11,8 @@
       "description": "Automerge prisma minor/patch when tests pass",
       "matchPackageNames": [
         "prisma",
-        "@prisma/*"
+        "@prisma/*",
+        "pg"
       ],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
