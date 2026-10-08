@@ -35,3 +35,11 @@ model AchievementPost {
   updated_at        DateTime   @default(now())
   sort_order        Int
 }
+
+// 画像同期の多重実行とレート制限後の再要求をサーバー間で抑止する。
+model SteamApiThrottle {
+  id              String    @id
+  next_allowed_at DateTime  @default(now())
+  lease_token     String?
+  lease_until     DateTime?
+}
